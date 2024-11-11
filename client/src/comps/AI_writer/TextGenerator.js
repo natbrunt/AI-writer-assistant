@@ -49,8 +49,8 @@ function TextGenerator() {
 
   // JSX to render the component's UI
   return (
-    <div id="wrapper" className=''>
-      <div id="container" className='mx-32 max-w-6xl'>
+    <div id="wrapper" className='justify-center'>
+      <div id="container" className='mx-32 max-w-6xl flex flex-row justify-between'>
         
 
         <Fields setField={setField} state={state}/>
@@ -63,8 +63,8 @@ function TextGenerator() {
         />
 
         <button 
-          className='bg-[#166384] w-full font-bold rounded-3xl
-         py-2 my-4'
+          className='font-bold rounded-3xl
+         py-2 my-4 button '
           onClick={handleGenerateText}
          >
           Generate Text</button>

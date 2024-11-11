@@ -60,11 +60,10 @@ function Fields({setField, state}) {
 
   // JSX to render the component's UI
   return (
-    <div id="field" className='wrapper pb-1 pt-2'>
-        <div id="field container" className='flex flex-row'>
+        <div id="field container" className=''>
             <div id="input wrapper">
                 <input //Name is taken care of and should be in the state obj
-                    placeholder='Name of receipent'
+                    placeholder='Target audience'
                     name="name" 
                     value={state.receipent}
                     className='pl-1 mr-12 mt-10 text-black outline outline-2 outline-black'
@@ -72,9 +71,9 @@ function Fields({setField, state}) {
                 </input>
             </div>
 
-            <div id="Length" className='min-w-40 flex flex-col'>
+            <div id="Length" className='min-w-40 '>
                 <h1>Length</h1>
-                <div className='flex flex-row items-center'>
+                <div className='flex flex-row'>
                 <input
                     name="short"
                     className='h-5 w-5 mr-1'
@@ -89,7 +88,7 @@ function Fields({setField, state}) {
                     />
                     <h1>Short</h1>
                 </div>
-                <div className='flex flex-row items-center'>
+                <div className='flex flex-row'>
                     <input
                     id="medium"
                     className='h-5 w-5 mr-1'
@@ -238,7 +237,7 @@ function Fields({setField, state}) {
             </div>
 
         </div>
-    </div>
+
   );
 }
 
