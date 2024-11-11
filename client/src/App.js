@@ -1,12 +1,14 @@
-import TextGenerator from './components/AI_writer/TextGenerator.js';
-import Header from './components/Header.js'
-import Footer from './components/Footer.js'
+import Navbar from './comps/Navbar.js';
+import TextGenerator from './comps/AI_writer/TextGenerator.js';
+import Hero from './comps/Hero.js'
+import Footer from './comps/Footer.js'
 
 function App() {
   return (
-    <div className="flex flex-col bg-[#50164a] ">
-      
-      <Header />
+    <div className="App">
+      <Navbar/>
+
+      <Hero />
       
       <TextGenerator />
     

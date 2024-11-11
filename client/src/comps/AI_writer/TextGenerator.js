@@ -49,7 +49,7 @@ function TextGenerator() {
 
   // JSX to render the component's UI
   return (
-    <div id="wrapper" className='text-white flex flex-col items-center'>
+    <div id="wrapper" className=''>
       <div id="container" className='mx-32 max-w-6xl'>
         
 

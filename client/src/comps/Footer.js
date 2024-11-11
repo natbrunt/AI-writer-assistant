@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar.js'
 
+
 function Footer() {
 
   // JSX to render the component's UI
