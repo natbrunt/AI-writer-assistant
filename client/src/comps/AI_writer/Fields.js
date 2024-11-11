@@ -88,7 +88,7 @@ function Fields({setField, state}) {
                     />
                     <h1>Short</h1>
                 </div>
-                <div className='flex flex-row'>
+                <div className=''>
                     <input
                     id="medium"
                     className='h-5 w-5 mr-1'
@@ -103,7 +103,7 @@ function Fields({setField, state}) {
                     />
                     <h1>Medium</h1>
                 </div>
-                <div className='flex flex-row items-center'>
+                <div className=''>
                     <input
                     id="long"
                     className='h-5 w-5 mr-1'
@@ -122,7 +122,7 @@ function Fields({setField, state}) {
             
             <div id="Tone" className='min-w-40'>
                 <h1>Tone</h1>
-                <div className='flex flex-row items-center'>
+                <div className=''>
                     <input
                     id="friendly"
                     className='h-5 w-5 mr-1'
@@ -138,7 +138,7 @@ function Fields({setField, state}) {
                     />
                     <h1>Friendly</h1>
                 </div>
-                <div className='flex flex-row items-center'>
+                <div className=''>
                     <input
                     id="sad"
                     className='h-5 w-5 mr-1'
@@ -154,7 +154,7 @@ function Fields({setField, state}) {
                     />
                     <h1>Sad</h1>
                 </div>
-                <div className='flex flex-row items-center'>
+                <div className=''>
                     <input
                     id="angry"
                     className='h-5 w-5 mr-1'
@@ -169,7 +169,7 @@ function Fields({setField, state}) {
                     }))}/>
                     <h1>Angry</h1>
                 </div>
-                <div className='flex flex-row items-center'>
+                <div className=''>
                     <input
                     id="Sarcastic"
                     className='h-5 w-5 mr-1'
@@ -189,7 +189,7 @@ function Fields({setField, state}) {
 
             <div id="Call to Action" className='min-w-40'>
                 <h1>Call to Action</h1>
-                <div className='flex flex-row items-center'>
+                <div className=''>
                     <input
                     id="contact me"
                     className='h-5 w-5 mr-1'
@@ -203,7 +203,7 @@ function Fields({setField, state}) {
                     }))}/>
                     <h1>Contact me</h1>
                 </div>
-                <div className='flex flex-row items-center'>
+                <div className=''>
                     <input
                     id="do what I say"
                     className='h-5 w-5 mr-1'
@@ -218,7 +218,7 @@ function Fields({setField, state}) {
                     />
                     <h1>Do what I say</h1>
                 </div>
-                <div className='flex flex-row items-center'>
+                <div className=''>
                     <input
                     id="wait for me"
                     className='h-5 w-5 mr-1'

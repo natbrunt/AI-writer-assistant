@@ -49,14 +49,14 @@ function TextGenerator() {
 
   // JSX to render the component's UI
   return (
-    <div id="wrapper" className='justify-center'>
-      <div id="container" className='mx-32 max-w-6xl flex flex-row justify-between'>
+    <div id="TextGenerator" className=''>
+ 
         
 
         <Fields setField={setField} state={state}/>
 
         <textarea
-          className="w-full h-48 border-2-black rounded-3xl px-4 py-2 font-bold text-black outline outline-2 outline-black" 
+          className="w-96 border-2-black rounded-3xl text-black outline outline-2 outline-black px-8" 
           value={state.sample}
           onChange={(e) => setField('sample', e.target.value)}
           placeholder='Sample Text'
@@ -71,9 +71,9 @@ function TextGenerator() {
 
         <GeneratedText stream={stream}/>
 
-      </div>
-
     </div>
+
+
   );
 }
 
