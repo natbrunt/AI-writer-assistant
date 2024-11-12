@@ -49,7 +49,7 @@ function TextGenerator() {
 
   // JSX to render the component's UI
   return (
-    <div id="TextGenerator" className=''>
+    <div id="TextGenerator" className='flex flex-col'>
  
         
 

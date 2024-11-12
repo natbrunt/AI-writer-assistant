@@ -2,63 +2,24 @@ import React, {useState, useEffect} from 'react';
 
 function Fields({setField, state}) {
 
-    let [length, setLength] = useState({
-        short: false,
-        medium: false,
-        long: false
-    })
- 
-    useEffect(()=>{
-        const handleField = () => {
-            if(length.short) setField('length', 'short')
-            else if(length.medium) setField('length', 'medium')
-            else if(length.long) setField('length', 'long')
-            else setField('length', '')
-        }
-        handleField()
-    },[length])
+    let [length, setLength] = useState('')
+    // short, medium, long
 
-    let [tone, setTone] = useState({
-        friendly: false,
-        sad: false,
-        angry: false,
-        sarcastic: false
-    })
+    let [tone, setTone] = useState('')
+    // poetic, reflective, technical, inspirational, creative
+    
+    let [action, setAction] = useState('')
+    // schedule_appointment, ask_for_feedback, express_interest, ask_question
 
     useEffect(()=>{
         const handleField = () => {
-            if(tone.friendly) setField('tone', 'friendly')
-            else if(tone.sad) setField('tone','sad')
-            else if(tone.angry) setField('tone', 'angry')
-            else if(tone.sarcastic) setField('tone','sarcastic')
-            else setField('tone', '')
+            length != '' && setField("length", length);
+            tone != '' && setField("tone",tone);
+            action != '' && setField("action", action);
         }
         handleField()
-    },[tone])
+    },[length, tone, action])
 
-    /* Suggestions:    
-        express_interest: false,
-        schedule_meeting: false,
-        provide_feedback: false,
-        ask_question: false */
-
-    let [call_to_action, setCallToAction] = useState({
-        contact_me: false,
-        do_what_I_say: false,
-        wait_for_me: false
-    })
-
-    useEffect(()=>{
-        const handleField = () => {
-            if(call_to_action.contact_me) setField('call_to_action', 'contact me')
-            else if(call_to_action.do_what_I_say) setField('call_to_action', 'do what I say')
-            else if(call_to_action.wait_for_me) setField('call_to_action', 'wait for me')
-            else setField('call_to_action', '')
-        }
-        handleField()
-    },[call_to_action])
-
-  // JSX to render the component's UI
   return (
         <div id="field container" className=''>
             <div id="input wrapper">
@@ -73,20 +34,15 @@ function Fields({setField, state}) {
 
             <div id="Length" className='min-w-40 '>
                 <h1>Length</h1>
-                <div className='flex flex-row'>
+                <div className=''>
                 <input
                     name="short"
                     className='h-5 w-5 mr-1'
                     type="checkbox"
-                    checked={length.short}
-                    onChange={() => setLength((prevState) => ({
-                        ...prevState,
-                        short: !prevState.short,
-                        medium: false,
-                        long: false
-                    }))}
+                    checked={length == 'short' ? true : false}
+                    onChange={(e) => setLength(e.target.name)}
                     />
-                    <h1>Short</h1>
+                    <span>Short</span>
                 </div>
                 <div className=''>
                     <input
@@ -101,7 +57,7 @@ function Fields({setField, state}) {
                         long: false
                     }))}
                     />
-                    <h1>Medium</h1>
+                    <span>Medium</span>
                 </div>
                 <div className=''>
                     <input
@@ -116,7 +72,7 @@ function Fields({setField, state}) {
                         long: !prevState.long
                     }))}
                     />
-                    <h1>Long</h1>
+                    <span>Long</span>
                 </div>
             </div>
             
@@ -136,7 +92,7 @@ function Fields({setField, state}) {
                         sarcastic: false
                     }))}
                     />
-                    <h1>Friendly</h1>
+                    <span>Friendly</span>
                 </div>
                 <div className=''>
                     <input
@@ -152,7 +108,7 @@ function Fields({setField, state}) {
                         sarcastic: false
                     }))}
                     />
-                    <h1>Sad</h1>
+                    <span>Sad</span>
                 </div>
                 <div className=''>
                     <input
@@ -167,7 +123,7 @@ function Fields({setField, state}) {
                         angry: !prevState.angry,
                         sarcastic: false
                     }))}/>
-                    <h1>Angry</h1>
+                    <span>Angry</span>
                 </div>
                 <div className=''>
                     <input
@@ -183,7 +139,7 @@ function Fields({setField, state}) {
                         sarcastic: !prevState.sarcastic
                     }))}
                     />
-                    <h1>Sarcastic</h1>
+                    <span>Sarcastic</span>
                 </div>
             </div>
 
@@ -201,7 +157,7 @@ function Fields({setField, state}) {
                         do_what_I_say: false,
                         wait_for_me: false
                     }))}/>
-                    <h1>Contact me</h1>
+                    <span>Contact me</span>
                 </div>
                 <div className=''>
                     <input
@@ -216,7 +172,7 @@ function Fields({setField, state}) {
                         wait_for_me: false
                     }))}
                     />
-                    <h1>Do what I say</h1>
+                    <span>Do what I say</span>
                 </div>
                 <div className=''>
                     <input
@@ -231,7 +187,7 @@ function Fields({setField, state}) {
                         wait_for_me: !prevState.wait_for_me
                     }))}
                     />
-                    <h1>Wait for me</h1>
+                    <span>Wait for me</span>
                 </div>
                 {/* ul of boolean html tags */}
             </div>
