@@ -7,10 +7,10 @@ function TextGenerator() {
   // State to manage component's data
   /* How do I pass a state as a prop? */
   const [state, setState] = useState({
-    receipent: '',
+    audience: '',
     length: '',
     tone: '',
-    call_to_action: '',
+    action: '',
     sample: '',
   });
 
@@ -27,7 +27,7 @@ function TextGenerator() {
   const handleGenerateText = async() => {
     // Update state
     try {
-      if (state.receipent !== '' && state.tone !== '' && state.length !== '' && state.call_to_action !== '') {
+      if (state.audience !== '' && state.tone !== '' && state.length !== '' && state.action !== '') {
         let response = await axios.post('http://localhost:3030/openai/hello',state)
         if (response.data.ok == true){
           setStream(response.data.message)
@@ -49,14 +49,14 @@ function TextGenerator() {
 
   // JSX to render the component's UI
   return (
-    <div id="TextGenerator" className='flex flex-col'>
+    <div id="TextGenerator" className='flex flex-col items-center'>
  
         
 
-        <Fields setField={setField} state={state}/>
+        {/* <Fields setField={setField} state={state}/> */}
 
         <textarea
-          className="w-96 border-2-black rounded-3xl text-black outline outline-2 outline-black px-8" 
+          className="w-full border-2-black rounded-3xl text-black outline outline-2 outline-black px-6" 
           value={state.sample}
           onChange={(e) => setField('sample', e.target.value)}
           placeholder='Sample Text'
@@ -64,7 +64,7 @@ function TextGenerator() {
 
         <button 
           className='font-bold rounded-3xl
-         py-2 my-4 button '
+         py-2 my-4 button w-[15rem]'
           onClick={handleGenerateText}
          >
           Generate Text</button>
