@@ -53,10 +53,10 @@ function TextGenerator() {
  
         
 
-        {/* <Fields setField={setField} state={state}/> */}
+        <Fields setField={setField} state={state}/>
 
         <textarea
-          className="w-full border-2-black rounded-3xl text-black outline outline-2 outline-black px-6" 
+          className="md:w-5/12 w-8/12 border-2-black rounded-3xl text-black outline outline-2 outline-black px-6" 
           value={state.sample}
           onChange={(e) => setField('sample', e.target.value)}
           placeholder='Sample Text'
