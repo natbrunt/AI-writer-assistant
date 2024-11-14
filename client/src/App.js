@@ -12,6 +12,8 @@ function App() {
       
       <TextGenerator />
     
+      
+
       <Footer />
 
     </div>

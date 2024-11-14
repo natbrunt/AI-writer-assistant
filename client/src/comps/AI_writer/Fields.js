@@ -22,62 +22,49 @@ function Fields({setField, state}) {
 
   return (
         <div id="field container" className=''>
-            <div id="input wrapper">
-                <input //Name is taken care of and should be in the state obj
-                    placeholder='Target audience'
-                    value={state.audience}
-                    className='pl-1 mr-12 mt-10 text-black outline outline-2 outline-black'
-                    onChange={(e) => setField('audience', e.target.value)}>
-                </input>
-            </div>
-
-            <div id="Length" className='min-w-40 '>
-                <h1>Length</h1>
-                <div className=''>
-                <input
+            
+            <div className="dropdown dropdown-bottom">
+                <div tabIndex={0} role="button" className="btn m-1">Length</div>
+                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow text-white">
+                    <li className='flex flex-row items-center'><input
                     name="short"
                     className='h-5 w-5 mr-1'
                     type="checkbox"
                     checked={length == 'short' ? true : false}
                     onChange={(e) => setLength(e.target.name)}
                     />
-                    <span>Short</span>
-                </div>
-                <div className=''>
-                    <input
+                    <span>Short</span></li>
+                    <li className='flex flex-row items-center'><input
                     name="medium"
                     className='h-5 w-5 mr-1'
                     type="checkbox"
                     checked={length == 'medium' ? true : false}
                     onChange={(e) => setLength(e.target.name)}
                     />
-                    <span>Medium</span>
-                </div>
-                <div className=''>
-                    <input
+                    <span>Medium</span></li>
+                    <li className='flex flex-row items-center'><input
                     name="long"
                     className='h-5 w-5 mr-1'
                     type="checkbox"
                     checked={length == 'long' ? true : false}
                     onChange={(e) => setLength(e.target.name)}
                     />
-                    <span>Long</span>
-                </div>
+                    <span>Long</span></li>
+                </ul>
             </div>
-            
-            <div id="Tone" className='min-w-40'>
-                <h1>Tone</h1>
-                <div className=''>
-                    <input
+
+            <div className="dropdown dropdown-bottom">
+                <div tabIndex={0} role="button" className="btn m-1">Tone</div>
+                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow text-white">
+                    <li className='flex flex-row items-center'><input
                     name="poetic"
                     className='h-5 w-5 mr-1'
                     type="checkbox"
                     checked={tone == 'poetic' ? true : false}
                     onChange={(e) => setTone(e.target.name)}
                     />
-                    <span>Poetic</span>
-                </div>
-                <div className=''>
+                    <span>Poetic</span></li>
+                    <li className='flex flex-row items-center'>
                     <input
                     className='h-5 w-5 mr-1'
                     type="checkbox"
@@ -85,16 +72,16 @@ function Fields({setField, state}) {
                     onChange={() => setTone('reflective')}
                     />
                     <span>Reflective</span>
-                </div>
-                <div className=''>
+                    </li>
+                <li className='flex flex-row items-center'>
                     <input
                     className='h-5 w-5 mr-1'
                     type="checkbox"
                     checked={tone == 'technical' ? true : false}
                     onChange={() => setTone('technical')}/>
                     <span>Technical</span>
-                </div>
-                <div className=''>
+                </li>
+                <li className='flex flex-row items-center'>
                     <input
                     className='h-5 w-5 mr-1'
                     type="checkbox"
@@ -102,8 +89,8 @@ function Fields({setField, state}) {
                     onChange={() => setTone('inspirational')}
                     />
                     <span>Inspirational</span>
-                </div>
-                <div className=''>
+                </li>
+                <li className='flex flex-row items-center'>
                     <input
                     className='h-5 w-5 mr-1'
                     type="checkbox"
@@ -111,20 +98,31 @@ function Fields({setField, state}) {
                     onChange={() => setTone('creative')}
                     />
                     <span>Creative</span>
-                </div>
+                </li>
+                <li className='flex flex-row items-center'>
+                    <input
+                    className='h-5 w-5 mr-1'
+                    type="checkbox"
+                    checked={tone == 'persuasive' ? true : false}
+                    onChange={() => setTone('persuasive')}
+                    />
+                    <span>Persuasive</span>
+                </li>
+                </ul>
             </div>
 
-            <div className='min-w-40'>
-                <h1>Action</h1>
-                <div className=''>
+            <div className="dropdown dropdown-bottom">
+                <div tabIndex={0} role="button" className="btn m-1">Action</div>
+                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-[16rem] p-2 shadow text-white">
+                <li className='flex flex-row items-center'>
                     <input
                     className='h-5 w-5 mr-1'
                     type="checkbox"
                     checked={action == 'schedule an appointment' ? true : false}
                     onChange={() => setAction('schedule an appointment')}/>
                     <span>Schedule an appointment</span>
-                </div>
-                <div className=''>
+                </li>
+                <li className='flex flex-row items-center'>
                     <input
                     className='h-5 w-5 mr-1'
                     type="checkbox"
@@ -132,8 +130,8 @@ function Fields({setField, state}) {
                     onChange={() => setAction('ask for feedback')}
                     />
                     <span>Ask for feedback</span>
-                </div>
-                <div className=''>
+                </li>
+                <li className='flex flex-row items-center'>
                     <input
                     className='h-5 w-5 mr-1'
                     type="checkbox"
@@ -141,8 +139,8 @@ function Fields({setField, state}) {
                     onChange={() => setAction('express interest')}
                     />
                     <span>Express interest</span>
-                </div>
-                <div className=''>
+                </li>
+                <li className='flex flex-row items-center'>
                     <input
                     className='h-5 w-5 mr-1'
                     type="checkbox"
@@ -150,9 +148,20 @@ function Fields({setField, state}) {
                     onChange={() => setAction('ask a question')}
                     />
                     <span>Ask a question</span>
-                </div>
+                </li>
+                </ul>
             </div>
 
+            <div id="input wrapper">
+                <input //Name is taken care of and should be in the state obj
+                    placeholder='Target audience'
+                    value={state.audience}
+                    className='pl-1 mr-12 mt-10 outline outline-2 outline-black text-white rounded-xl'
+                    onChange={(e) => setField('audience', e.target.value)}>
+                </input>
+            </div>
+            
+           
         </div>
 
   );
