@@ -11,7 +11,7 @@ app.use(cors())
 
 require('dotenv').config({ path: './.env' });
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 4040;
 
 app.use('/openai', require('./openai.route.controller.js'))
 

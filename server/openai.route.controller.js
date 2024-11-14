@@ -13,19 +13,19 @@ async function hello (req,res){
     try {
 	//console.log(JSON.stringify(req.body, null, 2));
 	let {
-		receipent: receipent,
-		length: length,
-		tone: tone,
-		call_to_action: call_to_action,
-		sample: sample
+		audience: audience,
+        length: length,
+        tone: tone,
+        action: action,
+        sample: sample
 	    } = req.body
 
-	let content = `Write me an email to ${receipent} that is ${length} in length and is ${tone} in tone.  The call to action is to ${call_to_action}. `
+	let content = `Write me ${tone} essay to ${audience} that is ${length} in length and is ${tone} in tone.  The essay should also ${action}. `
 
 	if (sample != "")
 		content = content + `Here is sample text ${sample}. `
 
-	content = content + "Just respond by writing the email."
+	content = content + "Just respond by writing the essay."
 
 	//console.log("content=" + content)
     // uncomment when JSON request is expected

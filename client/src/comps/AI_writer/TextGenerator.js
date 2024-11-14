@@ -28,7 +28,7 @@ function TextGenerator() {
     // Update state
     try {
       if (state.audience !== '' && state.tone !== '' && state.length !== '' && state.action !== '') {
-        let response = await axios.post('http://localhost:3030/openai/hello',state)
+        let response = await axios.post('http://localhost:4040/openai/hello',state)
         if (response.data.ok == true){
           setStream(response.data.message)
         }
@@ -56,11 +56,13 @@ function TextGenerator() {
         <Fields setField={setField} state={state}/>
 
         <textarea
-          className="md:w-5/12 w-8/12 border-2-black rounded-3xl text-white outline outline-2 outline-black px-6" 
+          className="md:w-5/12 w-8/12 border-2-black rounded-3xl text-black mt-[2rem] min-h-[12rem] outline outline-2 outline-black px-6 bg-white" 
           value={state.sample}
           onChange={(e) => setField('sample', e.target.value)}
           placeholder='Sample Text'
         />
+
+        <h1>`enter` for a newline</h1>
 
         <button 
           className='font-bold rounded-3xl

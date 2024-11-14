@@ -9,7 +9,7 @@ function Fields({setField, state}) {
     // poetic, reflective, technical, inspirational, creative
     
     let [action, setAction] = useState('')
-    // schedule_appointment, ask_for_feedback, express_interest, ask_question
+    // schedule appointment, ask_for_feedback, express interest, ask a question
 
     useEffect(()=>{
         const handleField = () => {
@@ -24,7 +24,7 @@ function Fields({setField, state}) {
         <div id="field container" className=''>
             
             <div className="dropdown dropdown-bottom">
-                <div tabIndex={0} role="button" className="btn m-1">Length</div>
+                <div tabIndex={0} role="button" className="btn m-1 bg-white text-black hover:bg-pink-500 hover:text-white border-2">Length</div>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow text-white">
                     <li className='flex flex-row items-center'><input
                     name="short"
@@ -54,7 +54,7 @@ function Fields({setField, state}) {
             </div>
 
             <div className="dropdown dropdown-bottom">
-                <div tabIndex={0} role="button" className="btn m-1">Tone</div>
+                <div tabIndex={0} role="button" className="btn m-1 bg-white text-black hover:bg-pink-500 border-2">Tone</div>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow text-white">
                     <li className='flex flex-row items-center'><input
                     name="poetic"
@@ -112,7 +112,7 @@ function Fields({setField, state}) {
             </div>
 
             <div className="dropdown dropdown-bottom">
-                <div tabIndex={0} role="button" className="btn m-1">Action</div>
+                <div tabIndex={0} role="button" className="btn m-1 bg-white text-black hover:bg-pink-500 border-2">Action</div>
                 <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-[16rem] p-2 shadow text-white">
                 <li className='flex flex-row items-center'>
                     <input
@@ -120,7 +120,7 @@ function Fields({setField, state}) {
                     type="checkbox"
                     checked={action == 'schedule an appointment' ? true : false}
                     onChange={() => setAction('schedule an appointment')}/>
-                    <span>Schedule an appointment</span>
+                    <span onClick={() => setAction('schedule an appointment')}>Schedule an appointment</span>
                 </li>
                 <li className='flex flex-row items-center'>
                     <input
@@ -129,7 +129,7 @@ function Fields({setField, state}) {
                     checked={action == 'ask for feedback' ? true : false}
                     onChange={() => setAction('ask for feedback')}
                     />
-                    <span>Ask for feedback</span>
+                    <span onClick={() => setAction('ask for feedback')}>Ask for feedback</span>
                 </li>
                 <li className='flex flex-row items-center'>
                     <input
@@ -138,7 +138,7 @@ function Fields({setField, state}) {
                     checked={action == 'express interest' ? true : false}
                     onChange={() => setAction('express interest')}
                     />
-                    <span>Express interest</span>
+                    <span  onClick={() => setAction('express interest')}>Express interest</span>
                 </li>
                 <li className='flex flex-row items-center'>
                     <input
@@ -147,7 +147,7 @@ function Fields({setField, state}) {
                     checked={action == 'ask a question' ? true : false}
                     onChange={() => setAction('ask a question')}
                     />
-                    <span>Ask a question</span>
+                    <span onClick={() => setAction('ask a question')}>Ask a question</span>
                 </li>
                 </ul>
             </div>
