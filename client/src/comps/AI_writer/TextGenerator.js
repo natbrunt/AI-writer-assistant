@@ -28,7 +28,7 @@ function TextGenerator() {
     // Update state
     try {
       if (state.audience !== '' && state.tone !== '' && state.length !== '' && state.action !== '') {
-        let response = await axios.post('http://localhost:4040/openai/hello',state)
+        let response = await axios.post(process.env.REACT_APP_SERVER + '/openai/hello',state)
         if (response.data.ok == true){
           setStream(response.data.message)
         }
