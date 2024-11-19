@@ -1,0 +1,32 @@
+$primary-color: rgb(255, 137, 206);
+$secondary-color: rgb(255, 87, 233);
+$tertiary-color: rgb(255, 0, 225);
+
+body{
+    background-color: white;
+    color: black;
+}
+
+.Hero {
+    color: black;
+    text-align: center;
+    padding: 20px;
+    font-size: 36px;
+
+}
+
+nav {
+    background-color: $primary-color;
+}
+
+.button {
+    background-color: $tertiary-color;
+    color: white;
+    font-style: italic;
+}
+
+.rectangle {
+    background-color: $secondary-color;
+    color: white;
+    outline-color: white;
+}
