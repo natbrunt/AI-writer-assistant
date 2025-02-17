@@ -6,6 +6,7 @@
 5) `nodemon` // Backend
 6) `npm start` // client
 
-## References
+### Sources
 1) Openai `openai.com`
 2) Tailwind CSS `tailwindcss.com`
+3) A "for hire post" on UpWork
